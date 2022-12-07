@@ -1,0 +1,24 @@
+{
+   "name": "Name",
+   "string1": "words",
+   "string2": "Yeah",
+   "num1": 1,
+   "num2": 100,
+   "num3": 50,
+   "bool": false,
+   "tup": [
+      "tuple1",
+      2,
+      false
+   ],
+   "lis": [
+      "list1",
+      3,
+      true
+   ],
+   "dict": {
+      "Key1": "dict1",
+      "Key2": 1,
+      "Key3": true
+   }
+}
