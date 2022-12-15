@@ -1,4 +1,7 @@
 import json
+import CryptoJSON as cj
+
+fileName = "Example.json"
 
 class Example():
     def __init__(self, name, string1, string2, num1, num2, num3, bool, tup, lis, dict) -> None:
@@ -22,6 +25,8 @@ jsonStr = json.dumps(example1.__dict__, indent=3)
 
 print(jsonStr)
 
-f = open("Example.json", "w")
-f.write(jsonStr)
-f.close()
+with open(fileName, "w") as f:
+    f.write(jsonStr)
+    f.close()
+
+cj.Encyrpt_Json(fileName)

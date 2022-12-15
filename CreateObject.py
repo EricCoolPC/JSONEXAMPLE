@@ -1,10 +1,15 @@
 import json
+import CryptoJSON as cj
 
-f = open("Example.json", "r")
+fileName = "Example.json"
 
-Obj = json.load(f)
+jsonData = cj.Decyrpt_Json(fileName)
 
-f.close()
+key = cj.ReadKey('key.key')
+
+jsonData = cj.Decyrpt_Json()
+
+Obj = json.load(jsonData)
 
 #print(Obj)
 t = type(Obj)
