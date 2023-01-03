@@ -1,15 +1,22 @@
 import json
+from cryptography.fernet import Fernet
 import CryptoJSON as cj
 
 fileName = "Example.json"
 
-jsonData = cj.Decyrpt_Json(fileName)
-
 key = cj.ReadKey('key.key')
+encryption = cj.GetEncryption(fileName)
 
-jsonData = cj.Decyrpt_Json()
+jsonData = cj.Decyrpt_Json(fileName, Fernet(key), encryption)
 
-Obj = json.load(jsonData)
+
+newJSON = json.dumps(jsonData, indent=3)
+
+with open("Example3.json", 'w') as f:
+    f.write(str(newJSON))
+    f.close()
+
+Obj = newJSON
 
 #print(Obj)
 t = type(Obj)
