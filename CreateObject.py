@@ -7,18 +7,14 @@ fileName = "Example.json"
 key = cj.ReadKey('key.key')
 encryption = cj.GetEncryption(fileName)
 
-jsonData = cj.Decyrpt_Json(fileName, Fernet(key), encryption)
-
-
-newJSON = json.dumps(jsonData, indent=3)
+jsonData = cj.Decyrpt_Json(Fernet(key), encryption)
 
 with open("Example3.json", 'w') as f:
-    f.write(str(newJSON))
+    f.write(jsonData)
     f.close()
 
-Obj = newJSON
+Obj = json.loads(jsonData)
 
-#print(Obj)
 t = type(Obj)
 print(t)
 

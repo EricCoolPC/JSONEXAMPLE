@@ -14,12 +14,8 @@ def Encyrpt_Json(fileName):
     with open(fileName, 'wb') as f:
         f.write(encrypted)
 
-def Decyrpt_Json(fileName, fer, enc):
-    with open(fileName, 'rb') as f:
-        data = f.read()
-        jsonContent = data.decode('utf-8')
-        decrypted_var = fer.decrypt(enc)
-
+def Decyrpt_Json(fer, enc):
+    decrypted_var = fer.decrypt(enc)
     back2Json = decrypted_var.decode('utf-8')
 
     return back2Json
